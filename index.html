@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DoctorConnect | Patient & Doctor Care</title>
+    <meta
+      name="description"
+      content="A modern healthcare platform for booking appointments and chatting with doctors."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav container">
+        <div class="brand">
+          <span class="brand-mark">+</span>
+          <span>DoctorConnect</span>
+        </div>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#booking">Book</a>
+          <a href="#chat">Chat</a>
+        </div>
+      </nav>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Trusted care, simple booking</p>
+          <h1>Connect with your doctor in minutes.</h1>
+          <p class="hero-text">
+            Patients can book appointments, share concerns, and receive updates
+            from doctors through one simple care portal.
+          </p>
+          <div class="hero-actions">
+            <a href="#booking" class="btn btn-primary">Book an appointment</a>
+            <a href="#chat" class="btn btn-secondary">Message a doctor</a>
+          </div>
+          <ul class="hero-highlights">
+            <li>Same-day appointment options</li>
+            <li>Secure doctor messaging</li>
+            <li>Easy care follow-ups</li>
+          </ul>
+        </div>
+
+        <div class="hero-card">
+          <div class="card-top">
+            <h3>Today’s care snapshot</h3>
+            <span class="status-pill">Live</span>
+          </div>
+          <div class="stats-grid">
+            <div>
+              <strong>24/7</strong>
+              <p>Doctor support</p>
+            </div>
+            <div>
+              <strong>98%</strong>
+              <p>Patient satisfaction</p>
+            </div>
+            <div>
+              <strong>12+</strong>
+              <p>Specialists</p>
+            </div>
+            <div>
+              <strong>3 min</strong>
+              <p>Avg. response</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="services" class="container section">
+        <div class="section-heading">
+          <p class="eyebrow">Why patients choose us</p>
+          <h2>Everything you need for a smoother care experience.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <h3>Book appointments</h3>
+            <p>Choose a doctor, pick a time, and confirm your visit quickly.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Message your doctor</h3>
+            <p>Ask questions, follow up, and share updates without waiting.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Track care plans</h3>
+            <p>Stay on top of upcoming visits, prescriptions, and recovery steps.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="booking" class="container section split-section">
+        <div class="panel">
+          <div class="section-heading left">
+            <p class="eyebrow">Appointment booking</p>
+            <h2>Reserve your next visit.</h2>
+          </div>
+          <form id="appointment-form" class="form-card">
+            <label>
+              Patient name
+              <input type="text" name="patientName" placeholder="Amina Yusuf" required />
+            </label>
+            <label>
+              Doctor
+              <select name="doctor" required>
+                <option value="Dr. Sara Khan">Dr. Sara Khan</option>
+                <option value="Dr. Daniel Brooks">Dr. Daniel Brooks</option>
+                <option value="Dr. Maya Patel">Dr. Maya Patel</option>
+              </select>
+            </label>
+            <label>
+              Date
+              <input type="date" name="date" required />
+            </label>
+            <label>
+              Time
+              <input type="time" name="time" required />
+            </label>
+            <label>
+              Reason for visit
+              <textarea name="reason" rows="3" placeholder="Describe your concern" required></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Confirm booking</button>
+          </form>
+        </div>
+
+        <div class="panel">
+          <div class="section-heading left">
+            <p class="eyebrow">Upcoming visits</p>
+            <h2>Your schedule at a glance.</h2>
+          </div>
+          <div id="appointment-list" class="appointment-list">
+            <article class="appointment-item">
+              <div>
+                <h3>General Consultation</h3>
+                <p>Dr. Sara Khan • July 02 • 10:30 AM</p>
+              </div>
+              <span class="status-pill confirmed">Confirmed</span>
+            </article>
+          </div>
+          <div id="booking-message" class="message success" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="chat" class="container section split-section chat-section">
+        <div class="panel">
+          <div class="section-heading left">
+            <p class="eyebrow">Doctor messaging</p>
+            <h2>Ask questions and stay connected.</h2>
+          </div>
+          <div class="doctor-card">
+            <div class="doctor-profile">
+              <div class="avatar">SK</div>
+              <div>
+                <h3>Dr. Sara Khan</h3>
+                <p>Cardiology Specialist</p>
+              </div>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+              <div class="bubble doctor">
+                Hello! I’m Dr. Khan. How can I help you today?
+              </div>
+            </div>
+            <form id="chat-form" class="chat-form">
+              <input type="text" id="chat-input" placeholder="Type your message" required />
+              <button class="btn btn-primary" type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="section-heading left">
+            <p class="eyebrow">Care support</p>
+            <h2>Built for simple, trustworthy interaction.</h2>
+          </div>
+          <div class="support-card">
+            <h3>What patients can do</h3>
+            <ul>
+              <li>Book appointments online in seconds</li>
+              <li>Send private questions to their doctor</li>
+              <li>Receive follow-up reminders and guidance</li>
+            </ul>
+            <h3>Doctor benefits</h3>
+            <ul>
+              <li>Organize appointments without extra admin work</li>
+              <li>Reply to patient concerns efficiently</li>
+              <li>Maintain a clear care timeline</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
